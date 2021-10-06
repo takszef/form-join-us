@@ -1,0 +1,266 @@
+@charset "UTF-8";
+$blue: #155db7;
+$white: #fff;
+$d-blue: #052954;
+$green: #adff2f;
+
+/*
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Yax | Software House Frontend Task - CSS
+
+    Spróbuj zmodyfikować poniższy plik ze stylami tak, by upiększyć formularz na stronie.
+    Jako inspiracji* (blokuje cię tylko twoja wyobraźnia ) możesz skorzystać z szablonu znajdującego się w pliku img/layout.png
+    Nie wymagamy, by wykonać identyczny layout. Liczy się kreatywność.
+
+    Przy wykonywaniu zadania można zmienić strukturę pliku index.html.
+    Pamiętaj, że w takim wypadku będzie trzeba zadbać o dostosowanie odpowiednich selektorów.
+
+    Jeśli korzystasz z preprocessorów takich jak Sass/Less, również możesz się tym pochwalić :).
+
+    Powodzenia!
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px;
+
+}
+
+body {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  background-image: url(https://leb.fbi.gov/image-repository/men-shaking-hands-stock.jpg/@@images/image);
+  background-position: -500px 0px;
+  color: $white;
+  font-family: oswald;
+
+}
+
+.left-side {
+  font-size: 2rem;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background-color: rgb(21, 93, 183, 0.4);
+
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3.8rem;
+    line-height: 4.5rem;
+    text-shadow: 2px 2px $d-blue;
+  }
+}
+
+.right-side {
+  background: linear-gradient(135deg, $blue, $d-blue);
+  text-align: center;
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  box-shadow: -2px 0px 14px #000000b8;
+}
+
+.form-box {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+
+  h2 {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-size: 3rem;
+    line-height: 2.8rem;
+    text-shadow: 2px 2px $d-blue;
+  }
+}
+
+#join-form {
+
+  margin-top: 20%;
+
+  input {
+
+    display: block;
+    margin: 10px auto;
+    border: none;
+    border-bottom: 1px solid darken($blue, 15%);
+    background: transparent;
+    color: white;
+    padding: 10px;
+    width: 100%;
+
+
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid lighten($blue, 20%);
+      color: $white;
+
+      &::placeholder {
+        color: $white;
+      }
+    }
+
+    &::placeholder {
+      color: darken($white, 20%);
+    }
+
+  }
+
+  #check-header {
+    text-transform: uppercase;
+    margin: 10% 0 10% 0;
+  }
+
+  .check-btn {
+
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: 1px solid $white;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0px 1px 2px #0000008c;
+    position: relative;
+
+    &:hover {
+      background-color: $white;
+
+    }
+
+    &:hover>label {
+      color: $blue;
+    }
+
+    input {
+      display: inline;
+      width: auto;
+      cursor: pointer;
+      visibility: hidden;
+
+    }
+
+    label {
+      color: $white;
+      transition: 0.3s;
+      cursor: pointer;
+      z-index: 22;
+    }
+
+    input[type="checkbox"] {
+      z-index: -20;
+    }
+
+    input[type="checkbox"]:checked~label::before {
+      content: "";
+      background-color: darken($green, 20%);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0px;
+      border-radius: 5px;
+      z-index: -1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    input[type="checkbox"]:checked~label {
+      color: $green;
+    }
+
+  }
+
+
+  #send-btn {
+    padding: 15px;
+    border-radius: 5px;
+    background-color: $white;
+    color: $blue;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: oswald;
+    margin-top: 5%;
+    transition: 0.3s;
+    cursor: pointer;
+    border: 1px solid $white;
+    box-shadow: 0px 0px 0px #0000008c inset;
+
+    &:hover {
+      position: relative;
+      transform: translateY(2px);
+      box-shadow: 0px 2px 2px #0000008c inset;
+
+    }
+
+    &:focus {
+      color: $blue;
+    }
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+
+  .left-side {
+    width: 100%;
+  }
+
+  .right-side {
+    width: 100%;
+    top: 100%;
+    height: 120%;
+  }
+
+  .form-box {
+    top: 60%;
+    transform: translate(50%, -60%);
+    width: 95%;
+
+    h2 {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+  }
+
+  #join-form {
+    margin-top: 10%;
+    input{
+      width: 90%;
+    }
+  }
+
+  #send-btn:hover {
+
+    transform: unset !important;
+    box-shadow: unset !important;
+
+  }
+
+  .check-btn:hover {
+    background-color: unset !important;
+  }
+  .check-btn:hover>label{
+    color: unset !important;
+  }
+
+}
+
+
+
+/*# sourceMappingURL=form.scss.map */

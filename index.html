@@ -1,0 +1,73 @@
+<!--
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Yax | Software House Frontend Task - HTML
+
+	W tym pliku znajduje się struktura strony z formularzem. Twoim zadaniem jest stworzenie oraz upiększenie
+	formularza. Przeanalizuj poniższy kod. Jego znajomość będzie potrzebna do przerobienia
+	pliku form.css odpowiedzialnego za styl strony. Gdy zapoznasz się ze strukturą strony,
+	przejdź do pliku css/form.css lub js/validation.js po dalsze instrukcje.
+
+    Powodzenia!
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Yax | Software House Frontend Task</title>
+	<link rel="stylesheet" type="text/css" href="css/form.css">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
+	<meta name="viewport" charset="utf-8"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+
+<body>
+
+	<section id="task-frontend">
+
+		<div class="left-side">
+			<h1 class="basic-title">Dołącz do nas już teraz!</h1>
+		</div>
+		<div class="right-side">
+			<div class="form-box">
+				<h2>Formularz rekrutacyjny</h2>
+				<form id="join-form" action="">
+					<div class="text-fields">
+						<input type="text" id="fname" name="fname" placeholder="Imię" required>
+						<input type="text" id="lname" name="lname" placeholder="Nazwisko" required>
+						<input type="email" id="email" name="email" placeholder="Adres e-mail" required>
+					</div>
+					<p id="check-header">
+						Sekcje, które Cię interesują:
+					</p>
+					<div class="check-fields">
+						<div class="check-btn">
+							<input class="lol" type="checkbox" id="check-frontend" name="check-frontend" value="fronted">
+							<label for="check-frontend">frontend</label>
+						</div>
+						<div class="check-btn">
+							<input type="checkbox" id="check-backend" name="check-backend" value="backend">
+							<label for="check-frontend">backend</label>
+						</div>
+						<div class="check-btn">
+							<input type="checkbox" id="check-mobile" name="check-mobile" value="mobile">
+							<label for="check-frontend">mobile</label>
+						</div>
+						<div class="check-btn">
+							<input type="checkbox" id="check-designer" name="check-designer" value="designer">
+							<label for="check-designer">grafika</label>
+						</div>
+					</div>
+					<input id="send-btn" type="submit" value="Wyślij">
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<!-- zaimportowanie pliku z kodem javascript, który dokona walidacji danych (zadanie JS) -->
+	<script type="text/javascript" src="js/validation.js"></script>
+
+</body>
+
+</html>
